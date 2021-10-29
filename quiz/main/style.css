@@ -1,0 +1,273 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  transition: all ease-in-out .3s;
+}
+
+body {
+  background: #1B1B2F;
+  font-size: 12px;
+}
+
+body, button, input {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.background {
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, .5);
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 12px;
+  background: #2e2e2e;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+  display: flex;
+}
+
+.screen-header-button {
+  /* //display: inline-block; */
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+  margin-right: 5px;
+  background: white;
+}
+
+.screen-header-button.close {
+  /* background: #F70D1C; */
+  /* background: #FF605C; */
+  background: #ff3240;
+}
+
+.screen-header-button.maximize {
+  /* background: #e8e925; */
+  background: #FFBD44;
+}
+
+.screen-header-button.minimize {
+  /* background: #74c54f; */
+  background: #00CA4E;
+}
+
+.screen-header-right {
+  display: flex;
+  margin-right: 10px;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #F70D1C;
+  font-size: 14px;
+}
+
+.app-title .csuu {
+  background: linear-gradient(to right, #F70D1C 0%, #FF6200 45%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-size: 80px; */
+  font-size: 40px;
+}
+
+.app-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  /* width: 55px; */
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #F70D1C 0%, #FF6200 90%);
+}
+
+.app-contact {
+  font-size: 10px;
+  color: #4d4d4f;
+  line-height: 15px;
+}
+
+.app-contact:hover {
+  background: linear-gradient(to right, #F70D1C 0%, #FF6200 45%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor:default;
+}
+
+/* .app-contact.gal {
+  position: absolute;
+  font-size: 14px; 
+  bottom: -90%;
+} */
+
+.app-contact a:hover {
+  background: linear-gradient(to right, #F70D1C 0%, #FF6200 45%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.app-contact-container {
+  position: relative;	
+  top: 36%;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+}
+
+.app-form-group.birth {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #4d4d4f;
+  font-size: 14px;
+  /* text-transform: uppercase; */
+  outline: none;
+  transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+  color: #999;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ff3240;
+}
+
+.app-form-control:valid {
+  border-bottom-color: #16bd56;
+}
+
+.app-form-button {
+  background: none;
+  border: none;
+  color: #F70D1C;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-form-button:hover {
+  background: linear-gradient(to right, #F70D1C 0%, #FF6200 45%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 610px) {
+  .screen-body {
+      flex-direction: column;
+  }
+
+  .screen-body-item.left {
+      margin-bottom: 30px;
+  }
+
+  .app-title {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .app-title span {
+      font-size: 26px;
+  }
+
+  .app-title .csuu {
+      font-size: 80px;
+  }
+
+  .app-title:after {
+      display: none;
+  }
+
+  .app-contact-container {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 15px;
+  }
+
+  .app-contact {
+      font-size: 9px;
+  }
+
+  .app-contact.gal {
+    position: relative;
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .screen-body {
+  padding: 40px 60px 40px 60px;
+  }
+
+  .screen-body-item {
+  padding: 0;
+  }
+}
